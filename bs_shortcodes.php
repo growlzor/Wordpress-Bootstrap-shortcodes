@@ -49,6 +49,19 @@ function bs_label( $atts, $content = null ) {
 }
 // add_shortcode('label', 'bs_label' );
 
+/*
+ * bs_panel
+ */
+function bs_panel( $atts, $content = null ) {
+    extract(shortcode_atts(array(
+      "type" => 'type'
+    ), $atts));
+
+    return '<div class="panel panel-' . $type . '">' . do_shortcode( $content ) . '</div>';
+
+}
+add_shortcode('panel', 'bs_panel' );
+
 // Add Shortcode
 function bs_alert( $atts , $content = null ) {
 
