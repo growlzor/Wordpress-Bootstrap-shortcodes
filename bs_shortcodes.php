@@ -4,7 +4,7 @@
 function bootstrap_label() {
 
   // Code
-  return '<span class="label">Default</span>';
+  return '<span class="label-default">Default</span>';
 }
 add_shortcode( 'label', 'bootstrap_label' );
 
@@ -22,12 +22,12 @@ function bootstrap_label_warning() {
 }
 add_shortcode( 'label-warning', 'bootstrap_label_warning' );
 
-function bootstrap_label_important() {
+function bootstrap_label_danger() {
 
   // Code
-  return '<span class="label label-important">Important</span>';
+  return '<span class="label label-danger">Danger</span>';
 }
-add_shortcode( 'label-important', 'bootstrap_label_important' );
+add_shortcode( 'label-danger', 'bootstrap_label_danger' );
 
 function bootstrap_label_info() {
 
@@ -35,13 +35,6 @@ function bootstrap_label_info() {
   return '<span class="label label-info">Info</span>';
 }
 add_shortcode( 'label-info', 'bootstrap_label_info' );
-
-function bootstrap_label_inverse() {
-
-  // Code
-  return '<span class="label label-inverse">Inverse</span>';
-}
-add_shortcode( 'label-inverse', 'bootstrap_label' );
 
 /*
  * bs_label
