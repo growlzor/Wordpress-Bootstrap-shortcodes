@@ -140,7 +140,7 @@ function bs_icon( $atts ) {
     ), $atts )
   );
 
-  $html = '<i class="icon-' . $glyph . '"></i>';
+  $html = '<i class="glyphicon glyphicon-' . $glyph . '"></i>';
   // Code
   return $html;
 }
