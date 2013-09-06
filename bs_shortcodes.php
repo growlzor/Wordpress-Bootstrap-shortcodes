@@ -8,6 +8,13 @@ function bootstrap_label() {
 }
 add_shortcode( 'label', 'bootstrap_label' );
 
+function bootstrap_label_primary() {
+
+  // Code
+  return '<span class="label label-primary">Primary</span>';
+}
+add_shortcode( 'label-primary', 'bootstrap_label_primary' );
+
 function bootstrap_label_success() {
 
   // Code
