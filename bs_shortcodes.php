@@ -177,17 +177,19 @@ function bs_collapse( $atts, $content = null ) {
       $state = 'in';
 
     return '
-    <div class="accordion-group">
-      <div class="accordion-heading">
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['current_collapse'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
           ' . $title . '
         </a>
       </div>
       <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
-        <div class="accordion-inner">
+          <div class="panel-body">
           ' . $content . '
         </div>
       </div>
+    </div>
     </div>
     ';
   }
