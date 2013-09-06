@@ -54,10 +54,16 @@ function bs_label( $atts, $content = null ) {
  */
 function bs_panel( $atts, $content = null ) {
     extract(shortcode_atts(array(
-      "type" => 'type'
+      "type" => 'type',
+      "title" => ''
     ), $atts));
 
-    return '<div class="panel panel-' . $type . '">' . do_shortcode( $content ) . '</div>';
+    return '<div class="panel panel-' . $type . '">' .
+    '<div class="panel-heading"' .
+      '<h3 class="panel-title">' . $title . '</h3>' .
+    '</div>' .
+      '<div class="panel-body">' . do_shortcode( $content ) . '</div>' .
+    '</div>';
 
 }
 add_shortcode('panel', 'bs_panel' );
