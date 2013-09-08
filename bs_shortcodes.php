@@ -85,11 +85,7 @@ function bs_alert( $atts , $content = null ) {
     ), $atts )
   );
 
-  if($type) {
     $html = '<div class="alert alert-' . $type . '">' . $content . '</div>';
-  } else {
-    $html = '<div class="alert">' . $content . '</div>';
-  }
   // Code
   return $html;
 }
