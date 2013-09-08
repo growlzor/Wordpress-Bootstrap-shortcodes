@@ -82,10 +82,17 @@ function bs_alert( $atts , $content = null ) {
   extract( shortcode_atts(
     array(
       'type' => 'warning',
+      'dismiss' => false
     ), $atts )
   );
 
     $html = '<div class="alert alert-' . $type . '">' . $content . '</div>';
+
+  if($dismiss) {
+    $html .= '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
+  }
+
+  $html .= $content . '</div>';
   // Code
   return $html;
 }
