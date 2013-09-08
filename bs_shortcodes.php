@@ -81,7 +81,7 @@ function bs_alert( $atts , $content = null ) {
   // Attributes
   extract( shortcode_atts(
     array(
-      'type' => '',
+      'type' => 'warning',
     ), $atts )
   );
 
