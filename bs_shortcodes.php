@@ -60,7 +60,7 @@ function bs_label( $atts, $content = null ) {
  * bs_panel
  */
 function bs_panel( $atts, $content = null ) {
-    extract(shortcode_atts(array(
+   extract(shortcode_atts(array(
       "type" => 'type',
       "title" => ''
     ), $atts));
@@ -86,7 +86,7 @@ function bs_alert( $atts , $content = null ) {
     ), $atts )
   );
 
-    $html = '<div class="alert alert-' . $type . '">' . $content . '</div>';
+  $html = '<div class="alert alert-' . $type . '">' . $content . '</div>';
 
   if($dismiss) {
     $html .= '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>';
@@ -102,15 +102,16 @@ add_shortcode( 'alert', 'bs_alert' );
  * bs_button
  */
 function bs_button($atts, $content = null) {
-     extract(shortcode_atts(array(
-        "type" => '',
+   extract(shortcode_atts(array(
+        "type" => 'default',
         "size" => '',
         "link" => '',
-        "xclass" => ''
-     ), $atts));
-     return '<a href="' . $link . '" class="btn btn-' . $type . ' btn-' . $size . ' ' . $xclass . '">' . do_shortcode( $content ) . '</a>';
+        "glyph" => ''
+   ), $atts));
+   $icon = '<span class="glyphicon glyphicon-' . $glyph . '"></span>';
+   return '<a href="' . $link . '" class="btn btn-' . $type . ' btn-' . $size . '">' . $icon . do_shortcode( $content ) . '</a>';
 }
-// add_shortcode('button', 'bs_button' );
+add_shortcode('button', 'bs_button' );
 
 // function bs_tooltip($atts, $content = null) {
 //  extract(shortcode_atts(array(
@@ -190,16 +191,16 @@ function bs_collapse( $atts, $content = null ) {
     <div class="panel-group">
       <div class="panel panel-default">
         <div class="panel-heading">
-        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['current_collapse'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
-          ' . $title . '
-        </a>
-      </div>
-      <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
+          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-' . $GLOBALS['current_collapse'] . '" href="#collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'">
+            ' . $title . '
+          </a>
+        </div>
+        <div id="collapse_' . $GLOBALS['current_collapse'] . '_'. sanitize_title( $title ) .'" class="accordion-body collapse ' . $state . '">
           <div class="panel-body">
-          ' . $content . '
+            ' . $content . '
+          </div>
         </div>
       </div>
-    </div>
     </div>
     ';
   }
