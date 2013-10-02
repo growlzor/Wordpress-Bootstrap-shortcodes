@@ -125,10 +125,10 @@ add_shortcode('tooltip', 'bs_tooltip' );
 
 function bs_tooltip( $atts, $content = null ) {
   extract(shortcode_atts(array(
-  'title' => '',
-  'placement' => 'top',
-  'animation' => 'true',
-  'html' => 'false'
+        'title' => '',
+        'placement' => 'top',
+        'animation' => 'true',
+        'html' => 'false'
    ), $atts));
 
   return '<a href="#" class="bs-tooltip" data-toggle="tooltip"
@@ -140,7 +140,12 @@ function bs_tooltip( $atts, $content = null ) {
         '</a>';
 }
 
-// Add Shortcode
+/**
+ * Bootstrap and Font-Awesome icons
+ * usage
+ * [icon glyph="time"] // bootstrap glyphicon name
+ * [icon fa glyph="github"] // include 'fa' then font-awesome icon name
+ */
 function bs_icon( $atts ) {
 
   // Attributes
