@@ -148,10 +148,12 @@ function bs_icon( $atts ) {
     array(
       'glyph' => '',
       'style' => '',
+      'fa' => 'false' // font-awesome
     ), $atts )
   );
 
-  $html = '<i class="glyphicon glyphicon-' . $glyph . '"></i>';
+  $class = $fa ? 'icon': 'glyphicon glyphicon';
+  $html = '<i class="' . $class .'-' . $glyph . '"></i>';
   // Code
   return $html;
 }
