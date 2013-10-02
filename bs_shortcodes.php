@@ -124,18 +124,12 @@ add_shortcode('button', 'bs_button' );
 add_shortcode('tooltip', 'bs_tooltip' );
 
 function bs_tooltip( $atts, $content = null ) {
-
-  $defaults = array(
+  extract(shortcode_atts(array(
   'title' => '',
   'placement' => 'top',
   'animation' => 'true',
   'html' => 'false'
-  );
-  extract( shortcode_atts( $defaults, $atts ) );
-
-  wp_enqueue_script( 'bootstrap-shortcodes-tooltip',
-                    get_template_directory_uri().'/assets/js/bootstrap-shortcodes-tooltip.js',
-                    array( 'jquery' ), false, true );
+   ), $atts));
 
   return '<a href="#" class="bs-tooltip" data-toggle="tooltip"
             title="' . $title . '"
